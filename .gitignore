@@ -1,0 +1,8 @@
+.project
+.settings/
+.classpath
+bin/
+src/helloworld/
+src/Lez1/
+src/Lez2/
+src/Lez3/
