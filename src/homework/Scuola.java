@@ -59,7 +59,7 @@ public class Scuola {
         	Files.write(Paths.get(fileName), getStudenti().getBytes(), StandardOpenOption.CREATE);
         }
         catch (IOException e) {
-        	System.out.println("Errore nell'apertura del file");
+        	System.out.println("Errore nella creazione del file");
         }
     }
 }

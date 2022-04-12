@@ -1,0 +1,40 @@
+--creo la vista dove lavorare
+create or replace view ordini_clienti as 
+select clienti.id as clienti_id, nome, libri.id as libri_id, titolo, 
+	data_inizio_prestito, data_fine_prestito
+	from clienti, libri, ordine_prestiti
+		where ordine_prestiti.id_cliente = clienti.id and 
+	     	  ordine_prestiti.id_libro = libri.id;
+			  
+--query per tenere controllo dei dati della vista
+select * from ordini_clienti order by nome asc;
+
+--1] Tutti i libri prestati ad un utente specifico in ordine cronologico.
+select titolo from ordini_clienti
+	where nome = 'Ranni'
+		ORDER BY data_inizio_prestito ASC;
+	
+--2] Individua i primi tre lettori che hanno letto più libri.
+select nome, count(*) as libri_letti 
+	from ordini_clienti 
+		where data_fine_prestito < '2022-04-12'
+			group by nome
+				order by libri_letti desc
+					limit 3;
+	
+--3] Individua tutti i possessori dei libri non ancora rientrati 
+--e il titolo degli stessi.
+select nome, titolo, data_fine_prestito from ordini_clienti
+	where data_fine_prestito > '2022-04-12';
+
+--4] Dare lo storico dei libri chiesi in prestito da un utente 
+--indicando il periodo.
+select nome, titolo, data_inizio_prestito, data_fine_prestito 
+	from ordini_clienti
+		where nome = 'Ranni' order by data_fine_prestito desc;
+	
+--5] Fai la classifica dei libri maggiormente prestati.
+select titolo, count(*) as numero_prestiti 
+	from ordini_clienti
+		group by titolo
+			order by numero_prestiti desc;
