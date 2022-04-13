@@ -115,7 +115,7 @@ select nome, cognome from possedimenti
 --6.Elencare tutti i possessori di immobili la cui data di 
 --costruzione è successiva al 1996.
 select nome, cognome from possedimenti
-	where anno_fabbricazione > '1985-01-01'
+	where anno_fabbricazione > '1985-01-01';
 	
 --7.Produrre una vista dei proprietari di appartamenti con a fianco 
 --il numero di vani complessivi disponibili.
