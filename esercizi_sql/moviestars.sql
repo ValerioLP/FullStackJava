@@ -82,3 +82,96 @@ CREATE TABLE IF NOT EXISTS public.spettacolo
         ON DELETE NO ACTION
 )
     
+insert into artista(codice_fiscale,nome,nazionalità,anno_nascita, tipo) 
+		     values('XYZABC01A05H501D','Malenia','francese','2001-01-05','Attore');
+insert into artista(codice_fiscale,nome,nazionalità,anno_nascita, tipo) 
+		     values('XYZABC00B07H501D','Ranni','italiana','2000-02-07','Attore');
+insert into artista(codice_fiscale,nome,nazionalità,anno_nascita, tipo) 
+		     values('XYZABC99D12H501N','Nepheli','americana','1999-04-12','Attore');
+insert into artista(codice_fiscale,nome,nazionalità,anno_nascita, tipo) 
+		     values('XYZABC55B21H501S','Miyazaki','giapponese','1955-02-21','Regista');
+
+insert into cinema(nome,città,numero_sale) 
+		     values('UCI Cinema Porta di Roma','Roma', 14);
+insert into cinema(nome,città,numero_sale) 
+		     values('UCI Cinema Roma Est','Roma', 12);
+insert into cinema(nome,città,numero_sale) 
+		     values('Atlantic','Parigi', 10);
+insert into cinema(nome,città,numero_sale) 
+		     values('Maximo','Madrid',20);
+insert into cinema(nome,città,numero_sale) 
+		     values('Franx','Nizza',8);
+		     
+insert into film(titolo,genere,anno_produzione,nazionalità) 
+		     values('The Day After Tomorrow','Fantascienza', '2004-01-01','USA');
+insert into film(titolo,genere,anno_produzione,nazionalità) 
+		     values('Inception','Fantascienza', '2010-01-01','USA');
+insert into film(titolo,genere,anno_produzione,nazionalità) 
+		     values('Iron Man','Azione', '2008-01-01','USA');
+insert into film(titolo,genere,anno_produzione,nazionalità) 
+		     values('Spider Man','Azione', '2002-01-01','USA');
+
+insert into sala(codice_cinema,numero,numero_posti) values(1,1,150);
+insert into sala(codice_cinema,numero,numero_posti) values(1,2,150);
+insert into sala(codice_cinema,numero,numero_posti) values(1,3,150);
+insert into sala(codice_cinema,numero,numero_posti) values(1,4,200);
+insert into sala(codice_cinema,numero,numero_posti) values(1,5,150);
+insert into sala(codice_cinema,numero,numero_posti) values(1,6,150);
+insert into sala(codice_cinema,numero,numero_posti) values(1,7,150);
+insert into sala(codice_cinema,numero,numero_posti) values(1,8,80);
+insert into sala(codice_cinema,numero,numero_posti) values(1,9,140);
+insert into sala(codice_cinema,numero,numero_posti) values(1,10,90);
+insert into sala(codice_cinema,numero,numero_posti) values(1,11,100);
+insert into sala(codice_cinema,numero,numero_posti) values(1,12,110);
+insert into sala(codice_cinema,numero,numero_posti) values(1,13,120);
+insert into sala(codice_cinema,numero,numero_posti) values(1,14,180);
+insert into sala(codice_cinema,numero,numero_posti) values(2,1,150);
+insert into sala(codice_cinema,numero,numero_posti) values(2,2,150);
+insert into sala(codice_cinema,numero,numero_posti) values(2,3,150);
+insert into sala(codice_cinema,numero,numero_posti) values(2,4,200);
+insert into sala(codice_cinema,numero,numero_posti) values(2,5,150);
+insert into sala(codice_cinema,numero,numero_posti) values(2,6,150);
+insert into sala(codice_cinema,numero,numero_posti) values(2,7,150);
+insert into sala(codice_cinema,numero,numero_posti) values(2,8,80);
+insert into sala(codice_cinema,numero,numero_posti) values(2,9,140);
+insert into sala(codice_cinema,numero,numero_posti) values(2,10,90);
+insert into sala(codice_cinema,numero,numero_posti) values(2,11,100);
+insert into sala(codice_cinema,numero,numero_posti) values(2,12,110);
+insert into sala(codice_cinema,numero,numero_posti) values(3,1,150);
+insert into sala(codice_cinema,numero,numero_posti) values(3,2,150);
+insert into sala(codice_cinema,numero,numero_posti) values(3,3,150);
+insert into sala(codice_cinema,numero,numero_posti) values(3,4,200);
+insert into sala(codice_cinema,numero,numero_posti) values(3,5,150);
+insert into sala(codice_cinema,numero,numero_posti) values(3,6,150);
+insert into sala(codice_cinema,numero,numero_posti) values(3,7,150);
+insert into sala(codice_cinema,numero,numero_posti) values(3,8,80);
+insert into sala(codice_cinema,numero,numero_posti) values(3,9,140);
+insert into sala(codice_cinema,numero,numero_posti) values(3,10,90);
+insert into sala(codice_cinema,numero,numero_posti) values(4,1,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,2,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,3,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,4,200);
+insert into sala(codice_cinema,numero,numero_posti) values(4,5,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,6,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,7,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,8,80);
+insert into sala(codice_cinema,numero,numero_posti) values(4,9,140);
+insert into sala(codice_cinema,numero,numero_posti) values(4,10,90);
+insert into sala(codice_cinema,numero,numero_posti) values(4,11,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,12,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,13,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,14,200);
+insert into sala(codice_cinema,numero,numero_posti) values(4,15,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,16,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,17,150);
+insert into sala(codice_cinema,numero,numero_posti) values(4,18,80);
+insert into sala(codice_cinema,numero,numero_posti) values(4,19,140);
+insert into sala(codice_cinema,numero,numero_posti) values(4,20,90);
+insert into sala(codice_cinema,numero,numero_posti) values(5,1,150);
+insert into sala(codice_cinema,numero,numero_posti) values(5,2,150);
+insert into sala(codice_cinema,numero,numero_posti) values(5,3,150);
+insert into sala(codice_cinema,numero,numero_posti) values(5,4,200);
+insert into sala(codice_cinema,numero,numero_posti) values(5,5,150);
+insert into sala(codice_cinema,numero,numero_posti) values(5,6,150);
+insert into sala(codice_cinema,numero,numero_posti) values(5,7,150);
+insert into sala(codice_cinema,numero,numero_posti) values(5,8,80);
