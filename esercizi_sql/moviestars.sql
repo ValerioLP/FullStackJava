@@ -81,6 +81,36 @@ CREATE TABLE IF NOT EXISTS public.spettacolo
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
+
+CREATE TABLE IF NOT EXISTS public."cast"
+(
+    codice_film integer NOT NULL,
+    cf_artista character varying(25) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT cast_pkey PRIMARY KEY (codice_film, cf_artista),
+    CONSTRAINT fk_artista FOREIGN KEY (cf_artista)
+        REFERENCES public.artista (codice_fiscale) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_film FOREIGN KEY (codice_film)
+        REFERENCES public.film (codice) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+CREATE TABLE IF NOT EXISTS public.composizione
+(
+    codice_cinema integer NOT NULL,
+    sala smallint NOT NULL,
+    CONSTRAINT composizione_pkey PRIMARY KEY (codice_cinema, sala),
+    CONSTRAINT fk_cinema FOREIGN KEY (codice_cinema)
+        REFERENCES public.cinema (codice) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_sala FOREIGN KEY (sala, sala)
+        REFERENCES public.sala (codice_cinema, numero) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
     
 insert into artista(codice_fiscale,nome,nazionalità,anno_nascita, tipo) 
 		     values('XYZABC01A05H501D','Malenia','francese','2001-01-05','Attore');
@@ -175,3 +205,15 @@ insert into sala(codice_cinema,numero,numero_posti) values(5,5,150);
 insert into sala(codice_cinema,numero,numero_posti) values(5,6,150);
 insert into sala(codice_cinema,numero,numero_posti) values(5,7,150);
 insert into sala(codice_cinema,numero,numero_posti) values(5,8,80);
+
+insert into "cast"(codice_film,cf_artista) values(1,'XYZABC01A05H501D');
+insert into "cast"(codice_film,cf_artista) values(3,'XYZABC01A05H501D');
+insert into "cast"(codice_film,cf_artista) values(1,'XYZABC00B07H501D');
+insert into "cast"(codice_film,cf_artista) values(2,'XYZABC00B07H501D');
+insert into "cast"(codice_film,cf_artista) values(3,'XYZABC00B07H501D');
+insert into "cast"(codice_film,cf_artista) values(1,'XYZABC55B21H501S');
+insert into "cast"(codice_film,cf_artista) values(2,'XYZABC55B21H501S');
+insert into "cast"(codice_film,cf_artista) values(3,'XYZABC55B21H501S');
+insert into "cast"(codice_film,cf_artista) values(4,'XYZABC55B21H501S');
+insert into "cast"(codice_film,cf_artista) values(2,'XYZABC99D12H501N');
+insert into "cast"(codice_film,cf_artista) values(2,'XYZABC99D12H501N');
