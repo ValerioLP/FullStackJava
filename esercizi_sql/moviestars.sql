@@ -300,3 +300,25 @@ INSERT INTO public.spettacolo VALUES (13, 3, '22:50:00', '2022-04-16');
 INSERT INTO public.spettacolo VALUES (7, 4, '18:20:00', '2022-04-16');
 INSERT INTO public.spettacolo VALUES (11, 4, '20:20:00', '2022-04-16');
 INSERT INTO public.spettacolo VALUES (15, 4, '22:20:00', '2022-04-16');
+
+--1- Il nome di tutti i cinema di Parigi
+select nome from cinema where città = 'Parigi';
+--2- Il titolo dei film di Miyazaki prodotti dopo il 2006.
+create or replace view produzione as
+select codice_film, film.titolo, cf_artista, artista.nome, anno_produzione, tipo from film, artista, "cast"
+	where codice_film = film.codice and
+	  cf_artista = artista.codice_fiscale;
+select titolo from produzione where nome = 'Miyazaki' and anno_produzione > '2006-01-01';
+--3- Il titolo e nazionalità dei film di fantascienza americani prodotti dopo il 2002
+select * from film, genere, appartenenza
+	where codice_film = film.codice and nome_genere = genere.nome and
+		  anno_produzione >= '2002-01-01' and nazionalità = 'USA' ;
+--4- I titolo dei film dello stesso regista di “Iron Man” (OPZIONALE)
+select titolo from produzione where nome in 
+	(select nome from produzione where tipo = 'Regista' and titolo = 'Iron Man');
+--5- I nomi dei cinema di Roma in cui il giorno 15-04-2022 è stato proiettato un film con Ranni
+select distinct nome from spettacolo, film, sala, cinema
+	where sala.codice_cinema = cinema.codice and codice_sala = sala.codice and codice_film = film.codice and
+	"data" =  '2022-04-15' and nome in(select distinct nome from cinema, palinsesto, film
+				where codice_cinema = cinema.codice and codice_film = film.codice and film.titolo in
+					(select titolo from produzione where nome = 'Ranni' and tipo = 'Attore'));
