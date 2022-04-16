@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Autore è una classe che contiene le seguenti informazioni, relative all'autore dell’articolo:
-	• id, nome, cognome
+ * Autore è una classe che contiene le seguenti informazioni, relative all'autore dell’articolo: 
+ * 	id, nome, cognome
  */
 public class Autore implements Scrittore {
 	
 	private int id;
 	private String nome;
 	private String cognome;
-	private List<Articolo> articoli_scritti = new ArrayList<>();
+	private List<Articolo> articoli_scritti = new ArrayList<>();	
 
 	public Autore(int id, String nome, String cognome) {
 		this.id = id;

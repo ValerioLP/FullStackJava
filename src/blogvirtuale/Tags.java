@@ -11,6 +11,6 @@ public class Tags {
 
 	public Tags(List<String> tags) { this.tags = tags; }
 	
-	public List<String> getTags() { return tags; }
+	public List<String> getTagsList() { return tags; }
 	
 }

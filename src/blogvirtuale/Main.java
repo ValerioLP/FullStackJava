@@ -44,8 +44,9 @@ public class Main {
 		
 		Blog blog = new Blog("MyBlog");
 		blog.addAutori(List.of(svevo, wilde, king));
-		blog.stampaArticoli();
-		blog.stampaArticoloPerId(1);
+		//blog.stampaArticoli();
+		//blog.stampaArticoloPerId(1);
+		blog.stampaArticoloPerTag("#king");
 	}
 
 }
