@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS public.film
     titolo character varying(25) COLLATE pg_catalog."default" NOT NULL,
     anno_produzione date NOT NULL,
     "nazionalità" character varying(25) COLLATE pg_catalog."default" NOT NULL,
+    genere character varying(25) COLLATE pg_catalog."default",
     CONSTRAINT film_pkey PRIMARY KEY (codice)
 )
 
